@@ -82,7 +82,9 @@ storage:
 
 # Extra environment variables to be passed
 # You can add any new ones at the bottom
-configEnvVars: {}
+configEnvVars:
+- name: ATHENS_LOG_LEVEL
+  value: debug
 
 # Extra annotations to be added to the athens pods
 annotations: {}
