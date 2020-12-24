@@ -35,7 +35,7 @@ type Storage struct {
 func New(s3Conf *config.S3Config, timeout time.Duration, options ...func(*aws.Config)) (*Storage, error) {
 	const op errors.Op = "s3.New"
 
-	awsConfig := &aws.Config{}
+	awsConfig := (&aws.Config{}).WithLogLevel(aws.LogDebug)
 	awsConfig.Region = aws.String(s3Conf.Region)
 	for _, o := range options {
 		o(awsConfig)
